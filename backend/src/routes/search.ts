@@ -32,6 +32,7 @@ router.get('/', async (req: Request, res: Response): Promise<void> => {
 
     if (!query) {
       res.status(400).json({ error: 'Search query is required' });
+      return;
     }
 
     // Simple text search implementation (can be enhanced with pg_trgm or full-text search)

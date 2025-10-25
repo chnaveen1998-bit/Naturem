@@ -22,6 +22,9 @@ metadata:
   namespace: naturem
 type: Opaque
 stringData:
+  # WARNING: These are example values for development only
+  # Replace with secure values before deploying to production
+  # Consider using external secret management like HashiCorp Vault or AWS Secrets Manager
   DB_USER: postgres
   DB_PASSWORD: change-me-in-production
   JWT_SECRET: change-me-in-production

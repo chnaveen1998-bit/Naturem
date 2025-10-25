@@ -66,6 +66,7 @@ router.post('/', authenticateToken, async (req: AuthRequest, res: Response): Pro
 
     if (!title || !content) {
       res.status(400).json({ error: 'Title and content are required' });
+      return;
     }
 
     const result = await pool.query(
@@ -110,6 +111,7 @@ router.get('/:id', authenticateToken, async (req: AuthRequest, res: Response): P
 
     if (result.rows.length === 0) {
       res.status(404).json({ error: 'Submission not found' });
+      return;
     }
 
     res.json(result.rows[0]);
